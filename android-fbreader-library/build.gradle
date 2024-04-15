@@ -1,0 +1,169 @@
+
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.2'
+        classpath 'digital.wup:android-maven-publish:3.6.2'
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    google()
+}
+
+apply plugin: 'com.android.library'
+//apply plugin: 'maven'
+apply plugin: 'signing'
+apply plugin: 'digital.wup.android-maven-publish' // 'gradle publishToMavenLocal' and 'publish' tasks
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'kotlin-kapt'
+android {
+    compileSdkVersion 30
+    ndkVersion "16.1.4479499"
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 1
+        versionName "0.1.18"
+        consumerProguardFiles 'consumer-proguard-rules.pro'
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
+    }
+
+    lintOptions {
+        disable 'WrongViewCast'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
+        }
+    }
+    externalNativeBuild {
+        ndkBuild {
+            path 'src/main/jni/Android.mk'
+        }
+    }
+    buildFeatures{
+        dataBinding true
+    }
+}
+
+// https://docs.gradle.org/current/userguide/publishing_maven.html
+
+task javadoc(type: Javadoc) {
+    failOnError = false // options.addStringOption('Xdoclint:none', '-quiet')
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(project.android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+def prop(String name) {
+    project.hasProperty(name) ? project.getProperty(name) : null
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId 'com.github.axet.fbreader'
+            artifactId 'library'
+            version android.defaultConfig.versionName
+
+            from components.android
+            artifact sourcesJar
+            artifact javadocJar
+
+            pom {
+                name = 'Android FBReader Library'
+                description = 'FBReader base classes.'
+                url = 'https://gitlab.com/axet/android-fbreader-library'
+                licenses {
+                    license {
+                        name = 'GPLv2'
+                        url = 'https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'axet'
+                        name = 'Alexey Kuznetsov'
+                        email = 'axet@me.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:' + pom.url.get()
+                    developerConnection = 'scm:git:' + pom.url.get()
+                    url = pom.url
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            def releasesRepoUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+            def snapshotsRepoUrl = "https://oss.sonatype.org/content/repositories/snapshots/"
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+            credentials {
+                username prop('ossrhUsername')
+                password prop('ossrhPassword')
+            }
+        }
+    }
+}
+
+signing {
+    sign publishing.publications.mavenJava
+}
+
+dependencies {
+    implementation 'com.android.support:support-v4:21.0.3'
+    implementation "com.google.android.material:material:1.4.0"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    api 'com.github.axet.fbreader:ambilwarna:1.0' // compile project(':ambilWarna')
+    api 'com.github.axet.fbreader:androidfilechooser:5.0' // compile project(':androidFileChooser')
+    api 'com.github.axet.fbreader:dragsortlistview:0.6.1' // compile project(':dragSortListview')
+    api 'com.github.axet.fbreader:supertoasts:1.3.4' // compile project(':superToasts')
+    api 'com.github.axet:pdfparse-lib:1.0'
+    api('com.googlecode.json-simple:json-simple:1.1.1') { exclude group: 'junit' }
+    api 'org.apache.httpcomponents:httpmime:4.5.2'
+    api 'com.nanohttpd:nanohttpd:2.1.0'
+  implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    testImplementation 'junit:junit:4.12'
+   // implementation "com.google.android.material:material:1.4.0"
+    implementation 'com.github.axet:android-library:1.35.21' // implementation project(':android-library')
+    // implementation project(':android-library')
+    implementation 'com.android.support:design:25.3.1'
+   // implementation project(':android-fbreader-library')
+    implementation 'com.android.support:support-vector-drawable:25.3.1'
+  //  implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    //  implementation ('com.github.axet.fbreader:library:0.1.18') { exclude group: 'org.apache.httpcomponents', module: 'httpclient' }
+    implementation 'com.github.axet:djvulibre:0.1.4'
+    implementation 'com.github.axet:pdfium:2.0.16'
+    implementation 'com.github.axet:k2pdfopt:0.1.6'
+    implementation ('com.github.axet:wget:1.7.0') { exclude group: 'org.json', module: 'json' }
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.2'
+    implementation 'io.reactivex.rxjava3:rxjava:3.1.5'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation "androidx.lifecycle:lifecycle-viewmodel:2.2.0"
+}

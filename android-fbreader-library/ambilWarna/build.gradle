@@ -1,0 +1,103 @@
+repositories {
+    mavenLocal()
+    jcenter()
+    google()
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+apply plugin: 'signing'
+apply plugin: 'digital.wup.android-maven-publish' // 'gradle publishToMavenLocal' and 'publish' tasks
+
+android {
+    compileSdkVersion 11
+
+    defaultConfig {
+        minSdkVersion 3
+        targetSdkVersion 3
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+// https://docs.gradle.org/current/userguide/publishing_maven.html
+
+task javadoc(type: Javadoc) {
+    failOnError = false // options.addStringOption('Xdoclint:none', '-quiet')
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(project.android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+def prop(String name) {
+    project.hasProperty(name) ? project.getProperty(name) : null
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId 'com.github.axet.fbreader'
+            artifactId 'ambilwarna'
+            version android.defaultConfig.versionName
+
+            from components.android
+            artifact sourcesJar
+            artifact javadocJar
+
+            pom {
+                name = 'Android FBReader Library'
+                description = 'Clone of https://code.google.com/p/android-color-picker/'
+                url = 'https://gitlab.com/axet/android-fbreader-library'
+                licenses {
+                    license {
+                        name = 'Apache License Version 2.0, January 2004'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'axet'
+                        name = 'Alexey Kuznetsov'
+                        email = 'axet@me.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:' + pom.url.get()
+                    developerConnection = 'scm:git:' + pom.url.get()
+                    url = pom.url
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            def releasesRepoUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+            def snapshotsRepoUrl = "https://oss.sonatype.org/content/repositories/snapshots/"
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+            credentials {
+                username prop('ossrhUsername')
+                password prop('ossrhPassword')
+            }
+        }
+    }
+}
+
+signing {
+    sign publishing.publications.mavenJava
+}

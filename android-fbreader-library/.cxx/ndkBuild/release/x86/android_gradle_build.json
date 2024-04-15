@@ -1,0 +1,124 @@
+{
+  "buildFiles": [
+    "C:\\Users\\ASUS\\Music\\android-book-reader-master\\android-fbreader-library\\src\\main\\jni\\Android.mk",
+    "C:\\Users\\ASUS\\Music\\android-book-reader-master\\android-fbreader-library\\src\\main\\jni\\Application.mk"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\ASUS\\AppData\\Local\\Android\\Sdk\\ndk\\16.1.4479499\\ndk-build.cmd",
+      "NDK_PROJECT_PATH\u003dnull",
+      "APP_BUILD_SCRIPT\u003dC:\\Users\\ASUS\\Music\\android-book-reader-master\\android-fbreader-library\\src\\main\\jni\\Android.mk",
+      "NDK_APPLICATION_MK\u003dC:\\Users\\ASUS\\Music\\android-book-reader-master\\android-fbreader-library\\src\\main\\jni\\Application.mk",
+      "APP_ABI\u003dx86",
+      "NDK_ALL_ABIS\u003dx86",
+      "NDK_DEBUG\u003d0",
+      "APP_PLATFORM\u003dandroid-21",
+      "NDK_OUT\u003dC:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/build/intermediates/ndkBuild/release/obj",
+      "NDK_LIBS_OUT\u003dC:\\Users\\ASUS\\Music\\android-book-reader-master\\android-fbreader-library\\build\\intermediates\\ndkBuild\\release\\lib",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\ASUS\\AppData\\Local\\Android\\Sdk\\ndk\\16.1.4479499\\ndk-build.cmd",
+    "NDK_PROJECT_PATH\u003dnull",
+    "APP_BUILD_SCRIPT\u003dC:\\Users\\ASUS\\Music\\android-book-reader-master\\android-fbreader-library\\src\\main\\jni\\Android.mk",
+    "NDK_APPLICATION_MK\u003dC:\\Users\\ASUS\\Music\\android-book-reader-master\\android-fbreader-library\\src\\main\\jni\\Application.mk",
+    "APP_ABI\u003dx86",
+    "NDK_ALL_ABIS\u003dx86",
+    "NDK_DEBUG\u003d0",
+    "APP_PLATFORM\u003dandroid-21",
+    "NDK_OUT\u003dC:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/build/intermediates/ndkBuild/release/obj",
+    "NDK_LIBS_OUT\u003dC:\\Users\\ASUS\\Music\\android-book-reader-master\\android-fbreader-library\\build\\intermediates\\ndkBuild\\release\\lib",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "NativeFormats-v4-release-x86": {
+      "buildCommandComponents": [
+        "C:\\Users\\ASUS\\AppData\\Local\\Android\\Sdk\\ndk\\16.1.4479499\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dC:\\Users\\ASUS\\Music\\android-book-reader-master\\android-fbreader-library\\src\\main\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dC:\\Users\\ASUS\\Music\\android-book-reader-master\\android-fbreader-library\\src\\main\\jni\\Application.mk",
+        "APP_ABI\u003dx86",
+        "NDK_ALL_ABIS\u003dx86",
+        "NDK_DEBUG\u003d0",
+        "APP_PLATFORM\u003dandroid-21",
+        "NDK_OUT\u003dC:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/build/intermediates/ndkBuild/release/obj",
+        "NDK_LIBS_OUT\u003dC:\\Users\\ASUS\\Music\\android-book-reader-master\\android-fbreader-library\\build\\intermediates\\ndkBuild\\release\\lib",
+        "C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/build/intermediates/ndkBuild/release/obj/local/x86/libNativeFormats-v4.so"
+      ],
+      "toolchain": "toolchain-x86",
+      "abi": "x86",
+      "artifactName": "NativeFormats-v4",
+      "output": "C:\\Users\\ASUS\\Music\\android-book-reader-master\\android-fbreader-library\\build\\intermediates\\ndkBuild\\release\\obj\\local\\x86\\libNativeFormats-v4.so"
+    },
+    "DeflatingDecompressor-v3-release-x86": {
+      "buildCommandComponents": [
+        "C:\\Users\\ASUS\\AppData\\Local\\Android\\Sdk\\ndk\\16.1.4479499\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dC:\\Users\\ASUS\\Music\\android-book-reader-master\\android-fbreader-library\\src\\main\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dC:\\Users\\ASUS\\Music\\android-book-reader-master\\android-fbreader-library\\src\\main\\jni\\Application.mk",
+        "APP_ABI\u003dx86",
+        "NDK_ALL_ABIS\u003dx86",
+        "NDK_DEBUG\u003d0",
+        "APP_PLATFORM\u003dandroid-21",
+        "NDK_OUT\u003dC:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/build/intermediates/ndkBuild/release/obj",
+        "NDK_LIBS_OUT\u003dC:\\Users\\ASUS\\Music\\android-book-reader-master\\android-fbreader-library\\build\\intermediates\\ndkBuild\\release\\lib",
+        "C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/build/intermediates/ndkBuild/release/obj/local/x86/libDeflatingDecompressor-v3.so"
+      ],
+      "toolchain": "toolchain-x86",
+      "abi": "x86",
+      "artifactName": "DeflatingDecompressor-v3",
+      "output": "C:\\Users\\ASUS\\Music\\android-book-reader-master\\android-fbreader-library\\build\\intermediates\\ndkBuild\\release\\obj\\local\\x86\\libDeflatingDecompressor-v3.so"
+    },
+    "expat-release-x86": {
+      "buildCommandComponents": [
+        "C:\\Users\\ASUS\\AppData\\Local\\Android\\Sdk\\ndk\\16.1.4479499\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dC:\\Users\\ASUS\\Music\\android-book-reader-master\\android-fbreader-library\\src\\main\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dC:\\Users\\ASUS\\Music\\android-book-reader-master\\android-fbreader-library\\src\\main\\jni\\Application.mk",
+        "APP_ABI\u003dx86",
+        "NDK_ALL_ABIS\u003dx86",
+        "NDK_DEBUG\u003d0",
+        "APP_PLATFORM\u003dandroid-21",
+        "NDK_OUT\u003dC:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/build/intermediates/ndkBuild/release/obj",
+        "NDK_LIBS_OUT\u003dC:\\Users\\ASUS\\Music\\android-book-reader-master\\android-fbreader-library\\build\\intermediates\\ndkBuild\\release\\lib",
+        "C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/build/intermediates/ndkBuild/release/obj/local/x86/libexpat.a"
+      ],
+      "toolchain": "toolchain-x86",
+      "abi": "x86",
+      "artifactName": "expat",
+      "output": "C:\\Users\\ASUS\\Music\\android-book-reader-master\\android-fbreader-library\\build\\intermediates\\ndkBuild\\release\\obj\\local\\x86\\libexpat.a"
+    },
+    "LineBreak-v2-release-x86": {
+      "buildCommandComponents": [
+        "C:\\Users\\ASUS\\AppData\\Local\\Android\\Sdk\\ndk\\16.1.4479499\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dC:\\Users\\ASUS\\Music\\android-book-reader-master\\android-fbreader-library\\src\\main\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dC:\\Users\\ASUS\\Music\\android-book-reader-master\\android-fbreader-library\\src\\main\\jni\\Application.mk",
+        "APP_ABI\u003dx86",
+        "NDK_ALL_ABIS\u003dx86",
+        "NDK_DEBUG\u003d0",
+        "APP_PLATFORM\u003dandroid-21",
+        "NDK_OUT\u003dC:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/build/intermediates/ndkBuild/release/obj",
+        "NDK_LIBS_OUT\u003dC:\\Users\\ASUS\\Music\\android-book-reader-master\\android-fbreader-library\\build\\intermediates\\ndkBuild\\release\\lib",
+        "C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/build/intermediates/ndkBuild/release/obj/local/x86/libLineBreak-v2.so"
+      ],
+      "toolchain": "toolchain-x86",
+      "abi": "x86",
+      "artifactName": "LineBreak-v2",
+      "output": "C:\\Users\\ASUS\\Music\\android-book-reader-master\\android-fbreader-library\\build\\intermediates\\ndkBuild\\release\\obj\\local\\x86\\libLineBreak-v2.so"
+    }
+  },
+  "toolchains": {
+    "toolchain-x86": {
+      "cCompilerExecutable": "C:\\Users\\ASUS\\AppData\\Local\\Android\\Sdk\\ndk\\16.1.4479499\\build\\..\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "cppCompilerExecutable": "C:\\Users\\ASUS\\AppData\\Local\\Android\\Sdk\\ndk\\16.1.4479499\\build\\..\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

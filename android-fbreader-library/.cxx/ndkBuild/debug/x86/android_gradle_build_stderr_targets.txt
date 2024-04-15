@@ -1,0 +1,66 @@
+C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/util/JniEnvelope.cpp:82:16: warning: second argument to 'va_start' is not the last named parameter [-Wvarargs]
+        va_start(lst, this);
+                      ^
+C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/util/JniEnvelope.cpp:234:16: warning: second argument to 'va_start' is not the last named parameter [-Wvarargs]
+        va_start(lst, this);
+                      ^
+2 warnings generated.
+In file included from C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/fbreader/src/bookmodel/BookModel.cpp:20:
+In file included from C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/util\AndroidUtil.h:28:
+C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/zlibrary/core/src/util\shared_ptr.h:147:3: warning: delete called on 'BookModel::HyperlinkMatcher' that is abstract but has non-virtual destructor [-Wdelete-non-virtual-dtor]
+                delete ptr;
+                ^
+C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/zlibrary/core/src/util\shared_ptr.h:178:15: note: in instantiation of member function 'shared_ptr_storage<BookModel::HyperlinkMatcher>::removeReference' requested here
+                        myStorage->removeReference();
+                                   ^
+C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/zlibrary/core/src/util\shared_ptr.h:208:2: note: in instantiation of member function 'shared_ptr<BookModel::HyperlinkMatcher>::detachStorage' requested here
+        detachStorage();
+        ^
+C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/fbreader/src/bookmodel/BookModel.cpp:31:12: note: in instantiation of member function 'shared_ptr<BookModel::HyperlinkMatcher>::~shared_ptr' requested here
+BookModel::BookModel(const shared_ptr<Book> book, jobject javaModel, const std::string &cacheDir) : CacheDir(cacheDir), myBook(book) {
+           ^
+1 warning generated.
+In file included from C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/fbreader/src/formats/oeb/NCXReader.cpp:22:
+C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/fbreader/src/formats/oeb/NCXReader.h:54:14: warning: private field 'myModelReader' is not used [-Wunused-private-field]
+        BookReader &myModelReader;
+                    ^
+1 warning generated.
+C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/fbreader/src/formats/pdb/PalmDocStream.cpp:204:28: warning: overflow in expression; result is 2147483647 with type 'int' [-Winteger-overflow]
+        return (size_t)((1 << 31) - 1);
+                                  ^
+1 warning generated.
+In file included from C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/fbreader/src/formats/txt/TxtReader.cpp:22:
+In file included from C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/zlibrary/core/src/filesystem\ZLInputStream.h:25:
+C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/zlibrary/core/src/util\shared_ptr.h:147:3: warning: delete called on non-final 'TxtReaderCore' that has virtual functions but non-virtual destructor [-Wdelete-non-virtual-dtor]
+                delete ptr;
+                ^
+C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/zlibrary/core/src/util\shared_ptr.h:178:15: note: in instantiation of member function 'shared_ptr_storage<TxtReaderCore>::removeReference' requested here
+                        myStorage->removeReference();
+                                   ^
+C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/zlibrary/core/src/util\shared_ptr.h:208:2: note: in instantiation of member function 'shared_ptr<TxtReaderCore>::detachStorage' requested here
+        detachStorage();
+        ^
+C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/fbreader/src/formats/txt/TxtReader.cpp:67:12: note: in instantiation of member function 'shared_ptr<TxtReaderCore>::~shared_ptr' requested here
+TxtReader::TxtReader(const std::string &encoding) : EncodedTextReader(encoding) {
+           ^
+1 warning generated.
+C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/fbreader/src/formats/xhtml/XHTMLReader.cpp:1005:11: warning: comparison of constant -1 with expression of type 'FBTextKind' is always true [-Wtautological-constant-out-of-range-compare]
+        if (kind != -1) {
+            ~~~~ ^  ~~
+1 warning generated.
+In file included from C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/fbreader/src/formats/doc/DocStreams.cpp:24:
+In file included from C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/fbreader/src/formats/doc/DocStreams.h:23:
+In file included from C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/zlibrary/core/src/filesystem\ZLFile.h:25:
+C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/zlibrary/core/src/util\shared_ptr.h:147:3: warning: delete called on non-final 'DocReader' that has virtual functions but non-virtual destructor [-Wdelete-non-virtual-dtor]
+                delete ptr;
+                ^
+C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/zlibrary/core/src/util\shared_ptr.h:178:15: note: in instantiation of member function 'shared_ptr_storage<DocReader>::removeReference' requested here
+                        myStorage->removeReference();
+                                   ^
+C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/zlibrary/core/src/util\shared_ptr.h:208:2: note: in instantiation of member function 'shared_ptr<DocReader>::detachStorage' requested here
+        detachStorage();
+        ^
+C:/Users/ASUS/Music/android-book-reader-master/android-fbreader-library/src/main/jni/NativeFormats/fbreader/src/formats/doc/DocStreams.cpp:140:33: note: in instantiation of member function 'shared_ptr<DocReader>::~shared_ptr' requested here
+        shared_ptr<DocReader> reader = createReader(myBuffer, mySize);
+                                       ^
+1 warning generated.

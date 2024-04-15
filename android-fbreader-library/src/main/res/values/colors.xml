@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ <!-- <item name="primary" type="color">#444444</item>-->
+  <!--<item name="primary_dark" type="color">#222222</item>-->
+  <color name="primary">#444444</color>
+  <color name="primary_dark">#222222</color>
+  <color name="seek_bar_background">#803399CC</color>
+  <color name="seek_bar_progress">#3399CC</color>
+  <color name="seek_bar_secondary_progress">#3399CC</color>
+</resources>

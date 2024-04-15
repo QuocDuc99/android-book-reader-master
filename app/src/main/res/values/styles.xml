@@ -1,0 +1,48 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="AppThemeLight" parent="AppThemeLightLib">
+        <item name="side_nav_bar">@drawable/side_nav_bar_light</item>
+    </style>
+
+    <style name="AppThemeLight.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#FB9A45</item>
+<!--        <item name="colorPrimaryVariant">@color/purple_700</item>-->
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#FFA880</item>
+        <item name="colorSecondaryVariant">#FFFFFF</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:splitMotionEvents">false</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
+
+    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppThemeLight.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppThemeDark" parent="AppThemeDarkLib">
+        <item name="side_nav_bar">@drawable/side_nav_bar_dark</item>
+        <item name="android:navigationBarColor">@color/black</item>
+    </style>
+
+    <style name="AppThemeDark.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppThemeDark.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" />
+
+    <style name="toolbar_bottom_icon_text" parent="toolbar_icon_text">
+        <item name="android:layout_marginBottom">7dp</item>
+        <item name="android:maxWidth">60dp</item>
+        <item name="android:singleLine">true</item>
+    </style>
+</resources>

@@ -1,0 +1,1 @@
+C:\Users\ASUS\Music\android-book-reader-master\android-fbreader-library\build\intermediates\ndkBuild\debug\obj\local\x86_64

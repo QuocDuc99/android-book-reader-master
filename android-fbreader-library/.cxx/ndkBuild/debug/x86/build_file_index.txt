@@ -1,0 +1,2 @@
+C:\Users\ASUS\Music\android-book-reader-master\android-fbreader-library\src\main\jni\Android.mk
+C:\Users\ASUS\Music\android-book-reader-master\android-fbreader-library\src\main\jni\Application.mk

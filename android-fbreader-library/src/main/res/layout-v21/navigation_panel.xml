@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.geometerplus.android.fbreader.NavigationWindow
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_panel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:background="@color/transparent"
+    android:focusable="false"
+    android:orientation="vertical"
+    android:paddingLeft="24dip"
+    android:paddingRight="24dip">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/navigation_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:paddingStart="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:paddingEnd="8dp"
+            android:singleLine="true"
+            android:background="@drawable/bg_out_line"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/navigation_editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_out_line"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:paddingStart="10dp"
+            android:paddingTop="4dp"
+            android:inputType="number"
+            android:paddingEnd="10dp"
+            android:paddingBottom="4dp"
+            android:singleLine="true"
+            android:visibility="invisible"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SeekBar
+            android:id="@+id/navigation_slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:progressDrawable="@drawable/seek_bar"
+            android:thumb="@drawable/seek_thumb"
+            app:layout_constraintTop_toBottomOf="@id/navigation_text" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/navigation_slider"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:paddingTop="4dp"
+            android:weightSum="1.0"
+            app:layout_constraintTop_toBottomOf="@id/navigation_slider">
+
+            <TextView
+                android:id="@+id/navigation_ok"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.45" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.1" />
+
+            <TextView
+                android:id="@+id/navigation_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.45" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</org.geometerplus.android.fbreader.NavigationWindow>
