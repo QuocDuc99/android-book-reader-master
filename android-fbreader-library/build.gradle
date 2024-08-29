@@ -24,6 +24,7 @@ apply plugin: 'digital.wup.android-maven-publish' // 'gradle publishToMavenLocal
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-parcelize'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'maven-publish'
 android {
     compileSdkVersion 30
     ndkVersion "16.1.4479499"
@@ -31,7 +32,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
-        versionName "0.1.18"
+        versionName "1.1"
         consumerProguardFiles 'consumer-proguard-rules.pro'
         ndk {
             abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
@@ -46,6 +47,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
+            consumerProguardFiles 'consumer-rules.pro'
         }
     }
     externalNativeBuild {
@@ -57,7 +59,10 @@ android {
         dataBinding true
     }
 }
-
+java {
+    sourceCompatibility = JavaVersion.VERSION_17            // << --- ADD This
+    targetCompatibility = JavaVersion.VERSION_17
+}
 // https://docs.gradle.org/current/userguide/publishing_maven.html
 
 task javadoc(type: Javadoc) {
@@ -83,18 +88,19 @@ def prop(String name) {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId 'com.github.axet.fbreader'
-            artifactId 'library'
+            groupId 'com.github.QuocDuc99'
+            artifactId 'android-fbreader-library'
             version android.defaultConfig.versionName
 
-            from components.android
-            artifact sourcesJar
-            artifact javadocJar
+          //  from components.android
+         //   artifact sourcesJar
+          //  artifact javadocJar
 
             pom {
-                name = 'Android FBReader Library'
-                description = 'FBReader base classes.'
-                url = 'https://gitlab.com/axet/android-fbreader-library'
+                description = 'First version release'
+                //name = 'Android FBReader Library'
+               /* description = 'First version release'
+                url = 'https://github.com/QuocDuc99/android-book-reader-master'
                 licenses {
                     license {
                         name = 'GPLv2'
@@ -112,11 +118,12 @@ publishing {
                     connection = 'scm:git:' + pom.url.get()
                     developerConnection = 'scm:git:' + pom.url.get()
                     url = pom.url
-                }
+                }*/
             }
         }
     }
     repositories {
+        mavenLocal()
         maven {
             def releasesRepoUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
             def snapshotsRepoUrl = "https://oss.sonatype.org/content/repositories/snapshots/"
